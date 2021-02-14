@@ -24,17 +24,12 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - name: Checkout
         uses: actions/checkout@v2.3.1
-      
-      - name: Setup Node 🔧
-        uses: actions/setup-node@v2
-        with:
-          node-version: '12'
-        
+          
       - name: Install Package 🔧
         uses: Borales/actions-yarn@v2.3.0
         with:
           # Yarn command
-          cmd: add
+          cmd: install
 
       - name: Build 🔧
         uses: Borales/actions-yarn@v2.3.0
@@ -47,6 +42,6 @@ jobs:
         with:
           branch: gh-pages # The branch the action should deploy to.
           folder: build # The folder the action should deploy.
-          
+ 
       - name: Result
-        run: echo "jobs.build-and-deploy.steps[2].env.deployment-status"
+        run: echo "$deployment_status"
