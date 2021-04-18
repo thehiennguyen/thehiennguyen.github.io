@@ -18,5 +18,23 @@ steps:
     echo See https://aka.ms/yaml
   displayName: 'Run a multi-line script'
 
-- script: dir
-  displayName: 'List all files'
+- script: git init
+  displayName: 'Init Git'
+
+- script: git status
+  displayName: 'Git Status'
+
+- script: git remote add origin https://github.com/thehiennguyen/thehiennguyen.github.io.git
+  displayName: 'Git Add Remote'
+
+- script: git remote -v
+  displayName: 'Git Remote Verify'
+
+- script: git status
+  displayName: 'Git Status'
+
+- script: git push -u develop
+  displayName: 'Git Push'
+
+- script: git status
+  displayName: 'Git Status'
