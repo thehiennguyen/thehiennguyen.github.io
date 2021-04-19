@@ -30,8 +30,12 @@ steps:
 - script: git status
   displayName: 'Git Status'
 
-#- script: git push github-origin develop
-#  displayName: 'Git Push'
-
 - script: git show-ref
   displayName: 'Git Show Ref'
+
+- script: git push github-origin HEAD:develop
+  displayName: 'Git Push'
+
+- script: git status
+  displayName: 'Git Status'
+
