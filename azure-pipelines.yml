@@ -10,14 +10,6 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
-
-- script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
-
 - script: git status
   displayName: 'Git Status'
 
@@ -33,7 +25,10 @@ steps:
 - script: git show-ref
   displayName: 'Git Show Ref'
 
-- script: git push github-origin HEAD:develop
+#Username: user
+#Personal Access Token: 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
+#Authen base64(user:base64): dXNlcjpnaHBfcTNtUFQwWjZWc0V6cmhVRERsRTduVWV2elYwU2FXMkxWd2tP
+- script: git -c http.extraheader="AUTHORIZATION:\ Bearer dXNlcjpnaHBfcTNtUFQwWjZWc0V6cmhVRERsRTduVWV2elYwU2FXMkxWd2tP" push github-origin HEAD:develop
   displayName: 'Git Push'
 
 - script: git status
