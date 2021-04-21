@@ -33,4 +33,3 @@ steps:
 
 - script: git status
   displayName: 'Git Status'
-
