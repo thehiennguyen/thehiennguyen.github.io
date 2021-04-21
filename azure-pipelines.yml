@@ -28,7 +28,7 @@ steps:
 #Username: user
 #Personal Access Token: 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
 #Authen base64(user:base64): dXNlcjpnaHBfcTNtUFQwWjZWc0V6cmhVRERsRTduVWV2elYwU2FXMkxWd2tP
-- script: git -c http.extraheader="AUTHORIZATION:\ Bearer dXNlcjpnaHBfcTNtUFQwWjZWc0V6cmhVRERsRTduVWV2elYwU2FXMkxWd2tP" push github-origin HEAD:develop
+- script: git -c http.extraheader="$(BearerToken)" push github-origin HEAD:develop
   displayName: 'Git Push'
 
 - script: git status
