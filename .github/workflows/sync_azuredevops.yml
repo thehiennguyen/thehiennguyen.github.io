@@ -47,7 +47,7 @@ jobs:
       - name: Git Push
         run: git -c http.extraheader="$AccessToken" push azure-origin HEAD:master-github
         env: 
-           AccessToken: 'AUTHORIZATION: Bearer dXNlcjpuNmRkb3czejNwNG94cHpqdmpyZXY3ZzN2eno1NmxuaWltdnd3ZGFqa3NoNHp1N3BkbHJx'
+           AccessToken: 'AUTHORIZATION: Basic dXNlcjpuNmRkb3czejNwNG94cHpqdmpyZXY3ZzN2eno1NmxuaWltdnd3ZGFqa3NoNHp1N3BkbHJx'
            
       # Runs a single command using the runners shell
       - name: Git Status
