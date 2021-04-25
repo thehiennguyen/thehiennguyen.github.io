@@ -30,5 +30,25 @@ jobs:
           echo test, and deploy your project.
           
       # Runs a single command using the runners shell
-      - name: git status
+      - name: git add azure devops origin
+        run: git remote add azure-origin https://nguyenthehien.visualstudio.com/GithubPages/_git/GithubPages
+      
+      # Runs a single command using the runners shell
+      - name: Git Remote Verify
+        run: git remote -v
+        
+      # Runs a single command using the runners shell
+      - name: Git Show Ref
+        run: git show-ref
+        
+     #Username: user
+     #Personal Access Token: PAT
+     #Authen base64(user:PAT): AUTHORIZATION: Basic dXNlcjpnaHBfcTNtUFQwWjZWc0V6cmhVRERsRTduVWV2elYwU2FXMkxWd2tP
+      - name: Git Push
+        run: git -c http.extraheader="$AccessToken" push azure-origin HEAD:master-github
+        env: 
+           AccessToken: 'AUTHORIZATION: Bearer dXNlcjpuNmRkb3czejNwNG94cHpqdmpyZXY3ZzN2eno1NmxuaWltdnd3ZGFqa3NoNHp1N3BkbHJx'
+           
+      # Runs a single command using the runners shell
+      - name: Git Status
         run: git status
